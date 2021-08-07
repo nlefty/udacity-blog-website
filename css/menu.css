@@ -1,0 +1,188 @@
+.menu {
+  text-transform: uppercase;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Button styling */
+.menu-toggle {
+  order: 2;
+  display: inline-block;
+  padding: 0.75em 0;
+  line-height: 1em;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+}
+
+.menu-toggle:focus {
+  color: var(--primary-color);
+}
+
+/*
+ Default styles + Mobile first
+ Offscreen menu style
+*/
+.blog-menu {
+  position: absolute;
+  display: none;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  /* overflow-y: scroll; */
+  overflow-x: visible;
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+  padding: 2em;
+}
+
+.blog-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 5em 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  min-height: 100%;
+  width: 100%;
+  background: rgba(59, 48, 175, 0.95);
+  text-align: center;
+}
+
+.blog-menu a {
+  display: block;
+  padding: 0.75em 15px;
+  /* line-height: 1em; */
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  margin: 2em 0 0;
+}
+
+.blog-menu a:hover,
+.blog-menu a:focus {
+  /* background: #333; */
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+.blog-menu .menu-close {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+}
+
+/*
+ On small devices, allow it to toggle...
+*/
+/*
+ :target for non-JavaScript
+ [aria-expanded] will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+.blog-menu:target,
+.blog-menu[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+  -moz-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+
+.blog-menu:target .menu-close,
+.blog-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
+
+.blog-menu:target ul,
+.blog-menu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+}
+
+/* 
+ We could us `.blog-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.blog-menu:target + .backdrop,
+.blog-menu[aria-expanded="true"] + .backdrop {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 2em;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: #000;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: default;
+}
+
+@supports (position: fixed) {
+  .blog-menu,
+  .blog-menu:target + .backdrop,
+  .blog-menu[aria-expanded="true"] + .backdrop {
+    position: fixed;
+  }
+}
+
+/*
+ Larger screen styling
+ Horizontal menu
+*/
+@media (min-width: 600px) {
+  .head {
+    flex-direction: column;
+  }
+
+  .menu-toggle,
+  .blog-menu .menu-close {
+    display: none;
+  }
+
+  /* Undo positioning of off-canvas menu */
+  .blog-menu {
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto;
+    display: block;
+    padding: 0;
+  }
+
+  .blog-menu ul {
+    display: flex;
+
+    /* Undo off-canvas styling */
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+
+  .blog-menu a {
+    color: #000;
+    border: 0 !important; /* Remove borders from off-canvas styling */
+  }
+
+  .blog-menu a:hover,
+  .blog-menu a:focus {
+    background: none; /* Remove background from off-canvas styling */
+    color: var(--secondary-color);
+  }
+}

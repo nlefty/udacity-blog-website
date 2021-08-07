@@ -1,0 +1,10 @@
+.foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--secondary-color);
+  /* border-top: solid 1px var(--primary-color); */
+  color: var(--main-bg-color);
+  height: 80px;
+}

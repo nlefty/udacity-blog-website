@@ -1,0 +1,248 @@
+@import url(menu.css);
+@import url(footer.css);
+@import url(post.css);
+
+:root {
+  --main-bg-color: #fffcf9;
+  --text-color: #333;
+  --primary-color: #b7199a;
+  --primary-color-lgt: #fbdaf4;
+  --secondary-color: #67baa6;
+  --secondary-color-lgt: #e2f3ef;
+  --tertiary-color: #3b30af;
+  --tertiary-color-lgt: #e0def7;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 1em "Montserrat", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  /* border-top: solid 5px var(--primary-color); */
+  border-bottom: solid 1px var(--primary-color-lgt);
+  height: auto;
+}
+
+.blog-title {
+  font: bold 1.5em "Poiret One", sans-serif;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 2em 0;
+  margin: 2em auto 4em;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+h1 {
+  padding: 1em 1em 1em 0;
+}
+
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+  border-bottom: 2px solid #e9e9e9;
+}
+
+.post:nth-child(1) .post-image {
+  background-image: url("/images/friends.jpg");
+  background-position: top center;
+  background-size: cover;
+  width: auto;
+  height: 300px;
+}
+
+.feature-post {
+  display: inline-block;
+  background: var(--secondary-color);
+  margin: 0.7em;
+  padding: 0.7em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.background-tint {
+  background-color: rgba(0, 0, 0, 0.1); /* Tint color */
+  background-blend-mode: multiply;
+}
+
+.post-img {
+  width: 100%;
+}
+
+.post-body {
+  padding: 1em;
+}
+
+.post-date {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+}
+
+.post-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.post-text {
+  line-height: 1.9em;
+  margin-bottom: 2em;
+}
+
+.main-content .more {
+  font-size: 0.8em;
+}
+
+a.more {
+  color: var(--primary-color);
+  font-weight: bolder;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a.more:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  max-width: inherit;
+  line-height: 1.9em;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  background-color: #e0def7;
+}
+
+.social {
+  background-color: #fbdaf4;
+}
+
+.newsletter {
+  background-color: #e2f3ef;
+}
+
+img.about-image {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  margin: 1em 0;
+  border: solid 1px #ddd;
+}
+
+.about,
+.social,
+.newsletter {
+  padding: 2em 2em 3em;
+}
+
+.about-content,
+.social-content,
+.news-content {
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.info h2,
+.info p {
+  padding-bottom: 0.5em;
+}
+
+.social a {
+  /* margin: 1em; */
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  width: 100%;
+}
+
+.social i {
+  border: solid 1px #f5a3e3;
+  border-radius: 40px;
+  height: 40px;
+  line-height: 2.3em;
+  width: 40px;
+  text-align: center;
+  margin-right: 0.5em;
+}
+
+.social a:hover {
+  color: #a51285;
+}
+
+.form {
+  justify-content: center;
+  width: 100%;
+  padding-top: 0.5em;
+}
+
+.form input {
+  font-family: inherit;
+  width: 90%;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  padding: 0.5em;
+  font-size: 0.9em;
+  border: solid 1px #f5a3e3;
+  outline: none;
+}
+
+.subscribe {
+  font-family: "Montserrat";
+  font-weight: bold;
+  padding: 1em;
+  margin: 1.5em auto;
+  border: solid 1px #f5a3e3;
+  outline: none;
+  text-transform: uppercase;
+  background-color: var(--main-bg-color);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.subscribe:hover {
+  cursor: pointer;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border: solid 1px var(--primary-color);
+  outline: none;
+  color: var(--main-bg-color);
+  background-color: var(--primary-color);
+}
+
+.accent {
+  color: var(--primary-color);
+}
