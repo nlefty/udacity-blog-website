@@ -39,7 +39,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2em;
-  /* border-top: solid 5px var(--primary-color); */
   border-bottom: solid 1px var(--primary-color-lgt);
   height: auto;
 }
@@ -53,8 +52,6 @@ body {
   flex-direction: column;
   padding: 2em 2em 0;
   margin: 2em auto 4em;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 h1 {
@@ -74,7 +71,7 @@ h3 {
 }
 
 .post:nth-child(1) .post-image {
-  background-image: url("/images/friends.jpg");
+  background-image: url("../images/friends.jpg");
   background-position: top center;
   background-size: cover;
   width: auto;
@@ -184,7 +181,6 @@ img.about-image {
 }
 
 .social a {
-  /* margin: 1em; */
   color: var(--text-color);
   transition: color 0.3s ease;
   width: 100%;
